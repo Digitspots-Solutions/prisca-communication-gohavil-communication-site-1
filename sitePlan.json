@@ -1,0 +1,42 @@
+{
+  "businessName": "Prisca Communication, GOHAVIL COMMUNICATION",
+  "industry": "Manufacturing",
+  "tone": "professional",
+  "tagline": "Engineering Excellence in Communication Solutions",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Prisca Communication, GOHAVIL COMMUNICATION. We are a leading manufacturing company based in Port Harcourt, Nigeria, dedicated to delivering high-quality communication equipment and solutions. With cutting-edge technology and Nigerian craftsmanship, we serve businesses and institutions across the region with reliability and precision.",
+      "imagePrompt": "Modern manufacturing facility in Port Harcourt, Nigeria, with sleek communication equipment on assembly lines, bright industrial lighting, workers in safety gear operating advanced machinery, Nigerian flags visible, professional industrial photography, sharp focus, bright and clean atmosphere",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Prisca Communication, GOHAVIL COMMUNICATION is a trusted name in the Nigerian manufacturing sector. Located at #15 Eastern Bypass off Ogbunabali, Port Harcourt, we specialize in producing world-class communication equipment tailored to meet the unique needs of Nigerian businesses and organizations. Our commitment to quality, innovation, and customer satisfaction has positioned us as a preferred partner for communication solutions across Rivers State and beyond. We combine international manufacturing standards with local expertise to deliver products that stand the test of time.",
+      "imagePrompt": "Professional team in a modern Nigerian manufacturing office, diverse Nigerian engineers and managers reviewing communication equipment blueprints, bright natural lighting through large windows, contemporary office interior with Nigerian aesthetic touches, corporate photography style",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "At Prisca Communication, GOHAVIL COMMUNICATION, we offer comprehensive manufacturing services including:\n\n**Communication Equipment Manufacturing** - We design and manufacture high-quality communication devices including radio systems, intercoms, and telecommunication accessories built to international standards.\n\n**Custom Solutions** - Our engineering team works closely with clients to develop bespoke communication equipment tailored to specific operational requirements and industry demands.\n\n**Quality Assurance & Testing** - Every product undergoes rigorous testing and quality control to ensure optimal performance, durability, and compliance with safety regulations.\n\n**Technical Support & Maintenance** - We provide ongoing technical support, maintenance services, and spare parts to ensure your communication systems operate at peak efficiency.\n\n**Installation & Training** - Our experienced technicians handle professional installation and provide comprehensive training to your team for seamless operation.",
+      "imagePrompt": "Grid layout of various communication equipment being manufactured, close-up shots of radio systems, intercoms, circuit boards, Nigerian technicians testing equipment with precision instruments, bright workshop environment, professional product photography, high detail",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your communication equipment needs? Prisca Communication, GOHAVIL COMMUNICATION is here to serve you.\n\n**Visit Our Facility:**\n#15 Eastern Bypass off Ogbunabali\nPort Harcourt, Rivers State, Nigeria\n\n**Call Us:**\n+234 806 341 2489\n\n**Business Hours:**\nMonday - Friday: 8:00 AM - 5:00 PM\nSaturday: 9:00 AM - 2:00 PM\n\nWhether you need a quote, technical consultation, or product information, our team is ready to assist. Contact us today and experience the difference of working with Port Harcourt's trusted communication equipment manufacturer.",
+      "imagePrompt": "Professional reception area of a Nigerian manufacturing company, modern desk with friendly receptionist, company branding visible, bright and welcoming atmosphere, Port Harcourt cityscape visible through windows, corporate photography, professional lighting",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+234 806 341 2489",
+    "email": "",
+    "address": "#15 Eastern Bypass off Ogbunabali, Port Harcourt, Rivers State, Nigeria",
+    "whatsapp": "https://wa.me/2348063412489"
+  }
+}
