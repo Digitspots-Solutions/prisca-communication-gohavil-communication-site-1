@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisca Communication, GOHAVIL COMMUNICATION - Engineering Excellence in Communication Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+3:wght@300;400;600&display=swap">
+    <style>
+        :root {
+            --color-primary: #1f1d1d;
+            --color-accent: #d24401;
+            --color-bg: #EEEBE5;
+            --color-text: #141414;
+            --color-surface: #262626;
+            --color-secondary-accent: #78979d;
+            --font-display: 'Russo One', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+            --border-radius: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(238, 235, 229, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.pexels.com/photos/7178310/pexels-photo-7178310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #b33901;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 80px 2rem;
+            background: var(--color-surface);
+            color: var(--color-bg);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--color-bg);
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-primary);
+            padding: 2rem;
+            box-shadow: 6px 6px 0 var(--color-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translate(-4px, -4px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            line-height: 1.8;
+            color: var(--color-bg);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            background: var(--color-surface);
+            color: var(--color-bg);
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float::before {
+            content: '💬';
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            text-align: center;
+            padding: 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            #hero,
+            #about,
+            #services,
+            #contact {
+                padding: 48px 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-container {
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Prisca Communication</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Prisca Communication, GOHAVIL COMMUNICATION</h1>
+            <p class="tagline">Engineering Excellence in Communication Solutions</p>
+            <p>Welcome to Prisca Communication, GOHAVIL COMMUNICATION. We are a leading manufacturing company based in Port Harcourt, Nigeria, dedicated to delivering high-quality communication equipment and solutions. With cutting-edge technology and Nigerian craftsmanship, we serve businesses and institutions across the region with reliability and precision.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <img src="https://images.pexels.com/photos/30688595/pexels-photo-30688595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Prisca Communication Team" class="about-image">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Prisca Communication, GOHAVIL COMMUNICATION is a trusted name in the Nigerian manufacturing sector. Located at #15 Eastern Bypass off Ogbunabali, Port Harcourt, we specialize in producing world-class communication equipment tailored to meet the unique needs of Nigerian businesses and organizations. Our commitment to quality, innovation, and customer satisfaction has positioned us as a preferred partner for communication solutions across Rivers State and beyond. We combine international manufacturing standards with local expertise to deliver products that stand the test of time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Communication Equipment Manufacturing</h3>
+                    <p>We design and manufacture high-quality communication devices including radio systems, intercoms, and telecommunication accessories built to international standards.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Solutions</h3>
+                    <p>Our engineering team works closely with clients to develop bespoke communication equipment tailored to specific operational requirements and industry demands.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Assurance & Testing</h3>
+                    <p>Every product undergoes rigorous testing and quality control to ensure optimal performance, durability, and compliance with safety regulations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technical Support & Maintenance</h3>
+                    <p>We provide ongoing technical support, maintenance services, and spare parts to ensure your communication systems operate at peak efficiency.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Installation & Training</h3>
+                    <p>Our experienced technicians handle professional installation and provide comprehensive training to your team for seamless operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Ready to discuss your communication equipment needs? Prisca Communication, GOHAVIL COMMUNICATION is here to serve you.</p>
+            <div class="contact-info">
+                <h3>Visit Our Facility:</h3>
+                <p>#15 Eastern Bypass off Ogbunabali<br>Port Harcourt, Rivers State, Nigeria</p>
+                
+                <h3>Call Us:</h3>
+                <p><a href="tel:+2348063412489">+234 806 341 2489</a></p>
+                
+                <h3>Business Hours:</h3>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                
+                <p>Whether you need a quote, technical consultation, or product information, our team is ready to assist. Contact us today and experience the difference of working with Port Harcourt's trusted communication equipment manufacturer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Prisca Communication, GOHAVIL COMMUNICATION. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2348063412489" class="whatsapp-float" target="_blank" rel="noopener"></a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
